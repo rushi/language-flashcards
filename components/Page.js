@@ -15,7 +15,7 @@ const Page = ({ title = 'Learn Kannada', children, ...rest }) => {
             </Head>
             <Header />
             <Menu />
-            {children}
+            <main className="px-5 py-5">{children}</main>
         </main>
     );
 };

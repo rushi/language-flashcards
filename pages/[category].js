@@ -10,7 +10,7 @@ const Grid = ({ category }) => {
     ));
     return (
         <Page title={`${_.capitalize(category)} words`}>
-            <div className="m-5 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-5">{cards}</div>
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-5">{cards}</div>
         </Page>
     );
 };
