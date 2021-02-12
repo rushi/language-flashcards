@@ -15,9 +15,17 @@ const Grid = ({ category }) => {
     );
 };
 
-export const getServerSideProps = async (context) => {
+export const getStaticProps = async (context) => {
     const category = context.params.category;
     return { props: { category } };
 };
+
+export async function getStaticPaths() {
+    const paths = _.keys(words).map(word => '/' + word);
+    return {
+        paths,
+        fallback: false,
+    };
+}
 
 export default Grid;
