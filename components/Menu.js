@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import Link from 'next/link';
-import words from '../pages/words';
+import words from '../words';
 
 const wordLinks = () => {
     return _.keys(words).map((word) => {

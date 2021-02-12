@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import words from './words';
+import words from '../words';
 import Page from '../components/Page';
 import Card from '../components/Card';
 
