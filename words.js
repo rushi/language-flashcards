@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-const words = {
+let words = {
     colors: {
         Red: 'Kempu',
         White: 'Bili',

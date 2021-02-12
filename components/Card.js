@@ -15,7 +15,7 @@ const Card = (props) => {
                     <div className="flex items-center space-x-3">
                         <h3 className="source text-gray-900 text-md font-medium truncate">{props.source}</h3>
                     </div>
-                    <p className={`animate__animated ${visibility} mt-1 text-green-400 text-md truncate`}>
+                    <p className={`animate__animated ${visibility} whitespace-normal mt-1 text-green-400 text-sm truncate`}>
                         {props.destination}
                     </p>
                 </div>
