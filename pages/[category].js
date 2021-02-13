@@ -38,7 +38,11 @@ const Category = ({ category }) => {
     const [order, setOrder] = useState('alphabetic');
     const [source, setSource] = useState('english');
 
-    ray(order + ', ' + source);
+    useEffect(() => {
+        setList(words[category]);
+    }, [category]);
+
+    ray(order + ', ' + source + ': ' + _.keys(list)[0]);
     const active = { order: { [order]: true }, source: { [source]: true } };
     const sort = (e) => {
         const newOrder = e.target.getAttribute('data-sort');
