@@ -21,7 +21,7 @@ const Footer = () => {
                     <a
                         target="_blank"
                         title="Find new words on Google Translate. They may not be accurate though"
-                        href="https://github.com/rushi/language-flashcards"
+                        href="https://translate.google.com/?sl=en&tl=kn&op=translate"
                         className="text-gray-400 hover:text-gray-500"
                     >
                         <span className="sr-only">Google Translate</span>
