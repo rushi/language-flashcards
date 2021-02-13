@@ -9,7 +9,7 @@ const GroupButton = (props) => {
     }
 
     const active = isActive ? 'bg-gray-50' : '';
-    const classes = `relative ${roundedClassname} inline-flex items-center px-4 py-2 hover:bg-gray-50 border border-gray-300 bg-white text-sm font-medium text-gray-700 ${active} focus:outline-none`;
+    let classes = `${roundedClassname} ${active} inline-flex items-center px-2.5 py-1.5 md:px-4 md:py-2 md:text-sm border border-gray-300 text-xs font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none`;
 
     return (
         <button type="button" className={classes} onClick={onClick} {...rest}>
