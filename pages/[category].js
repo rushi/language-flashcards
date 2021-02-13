@@ -38,6 +38,7 @@ const Category = ({ category }) => {
     const [order, setOrder] = useState('alphabetic');
     const [source, setSource] = useState('english');
 
+    ray(order + ', ' + source);
     const active = { order: { [order]: true }, source: { [source]: true } };
     const sort = (e) => {
         const newOrder = e.target.getAttribute('data-sort');
@@ -53,6 +54,7 @@ const Category = ({ category }) => {
         }
     };
 
+    // TODO: These can be a separate component
     const sortList = [
         { title: 'A-Z', key: 'alphabetic' },
         { title: 'Random', key: 'random' },
@@ -64,7 +66,6 @@ const Category = ({ category }) => {
     ];
     const sortButtons = generateButton(sortList, sort, 'sort', active.order);
     const sourceButtons = generateButton(sourceList, swap, 'source', active.source);
-    ray(order + ', ' + source);
 
     return (
         <Page title={`Learn ${_.capitalize(category)}`}>
