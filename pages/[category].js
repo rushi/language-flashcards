@@ -7,7 +7,7 @@ const Category = ({ category }) => {
     const list = words[category];
     return (
         <Page title={`Learn ${_.capitalize(category)}`}>
-            <Grid words={list} />
+            <Grid order='alphabetic' source='english' words={list} />
         </Page>
     );
 };

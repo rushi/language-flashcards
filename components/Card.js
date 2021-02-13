@@ -5,11 +5,9 @@ const Card = (props) => {
     const visibility = visible ? 'animate__slideInUp' : 'invisible';
     const show = (e) => setVisible(true);
 
+    // TODO: better animation animate__animated animate__fadeInUpBig
     return (
-        <div
-            onClick={show}
-            className="animate__animated animate__fadeInUpBig bg-white rounded-sm mb-5 border-2 border-blue-200 cursor-pointer"
-        >
+        <div onClick={show} className="bg-white rounded-sm mb-5 border-2 border-blue-200 cursor-pointer">
             <div className="w-full flex items-center justify-between p-6 space-x-6">
                 <div className="flex-1 truncate">
                     <div className="flex items-center space-x-3">
