@@ -10,9 +10,7 @@ const Index = () => {
                     <li>Tap on a card to reveal it's translation</li>
                 </ol>
             </div>
-            <p className="py-5 text-gray-500">
-                More learning methods and little bit of design coming
-            </p>
+            <p className="py-5">More learning methods and little bit of design coming</p>
         </Page>
     );
 };

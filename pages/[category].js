@@ -1,17 +1,13 @@
 import _ from 'lodash';
 import words from '../words';
+import Grid from '../components/Grid';
 import Page from '../components/Page';
-import Card from '../components/Card';
 
-const Grid = ({ category }) => {
+const Category = ({ category }) => {
     const list = words[category];
-    let cards = _.keys(list).map((source) => <Card key={source} source={source} destination={list[source]} />);
-    cards = process.env.SHUFFLE_WORDS ? _.shuffle(cards) : cards;
     return (
-        <Page title={`${_.capitalize(category)} words`}>
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-5">
-                {cards}
-            </div>
+        <Page title={`Learn ${_.capitalize(category)}`}>
+            <Grid words={list} />
         </Page>
     );
 };
@@ -29,4 +25,4 @@ export async function getStaticPaths() {
     };
 }
 
-export default Grid;
+export default Category;
