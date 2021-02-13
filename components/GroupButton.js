@@ -8,7 +8,7 @@ const GroupButton = (props) => {
         roundedClassname = 'rounded-r-md';
     }
 
-    const active = isActive ? 'bg-pink-100' : '';
+    const active = isActive ? 'bg-gray-50' : '';
     const classes = `relative ${roundedClassname} inline-flex items-center px-4 py-2 hover:bg-gray-50 border border-gray-300 bg-white text-sm font-medium text-gray-700 ${active} focus:outline-none`;
 
     return (
