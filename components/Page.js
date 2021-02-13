@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Menu from '../components/Menu';
+import { ray } from 'node-ray/web';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -11,6 +12,7 @@ const Page = ({ title = 'Learn Kannada', children, ...rest }) => {
                 <link rel="shortcut icon" href="/favicon.png" />
                 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
             </Head>
+
             <Header />
             <Menu />
 
