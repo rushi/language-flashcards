@@ -2,10 +2,13 @@ import React, { useState } from 'react';
 
 const Card = (props) => {
     const [visible, setVisible] = useState(false);
-    const visibility = visible ? 'animate__slideInUp' : 'invisible';
-    const show = (e) => setVisible(true);
+    const [animate, setAnimate] = useState(false);
+    const visibility = visible ? 'animate__slideInUp' : animate ? 'animate__slideOutDown' : 'invisible';
+    const show = (e) => {
+        setAnimate(true);
+        setVisible(!visible);
+    }
 
-    // TODO: better animation animate__animated animate__fadeInUpBig
     return (
         <div onClick={show} className="card bg-white rounded-sm mb-0 border border-blue-200 cursor-pointer">
             <div className="w-full flex items-center justify-between space-x-6">

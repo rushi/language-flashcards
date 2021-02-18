@@ -1,7 +1,7 @@
 const Footer = () => {
     return (
         <footer className="bg-white">
-            <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 md:flex md:items-center md:justify-between lg:px-8">
+            <div className="max-w-7xl mx-auto py-12 px-4 md:justify-between">
                 <div className="flex justify-center space-x-4 md:order-2">
                     <a
                         target="_blank"
@@ -35,7 +35,7 @@ const Footer = () => {
                     </a>
                 </div>
                 <div className="mt-8 md:mt-0 md:order-1">
-                    <p className="text-center text-base text-gray-400">
+                    <p className="text-center text-base text-gray-400 pt-4">
                         A learning project by{' '}
                         <a target="_blank" className="underline" href="http://rushi.vishavadia.com">
                             Rushi Vishavadia
