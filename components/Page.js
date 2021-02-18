@@ -4,7 +4,7 @@ import { ray } from 'node-ray/web';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
-const Page = ({ title = 'Learn Kannada', children, ...rest }) => {
+const Page = ({ active, title = 'Learn Kannada', children, ...rest }) => {
     return (
         <main {...rest}>
             <Head>
@@ -14,7 +14,7 @@ const Page = ({ title = 'Learn Kannada', children, ...rest }) => {
             </Head>
 
             <Header />
-            <Menu />
+            <Menu active={active} />
 
             <section className="px-5 py-5">{children}</section>
 

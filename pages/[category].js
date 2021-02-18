@@ -34,7 +34,7 @@ const generateButton = (sortList, callback, name, active) => {
 };
 
 const Category = ({ category }) => {
-    const [list, setList] = useState(words[category]); // TODO: This is a state because I can't derive it from source
+    const [list, setList] = useState(words[category]); // TODO: This is a state because I can't derive it from source due to the json format
     const [order, setOrder] = useState('alphabetic');
     const [source, setSource] = useState('english');
 
@@ -42,7 +42,6 @@ const Category = ({ category }) => {
         setList(words[category]);
     }, [category]);
 
-    ray(order + ', ' + source + ': ' + _.keys(list)[0]);
     const active = { order: { [order]: true }, source: { [source]: true } };
     const sort = (e) => {
         const newOrder = e.target.getAttribute('data-sort');
@@ -72,9 +71,8 @@ const Category = ({ category }) => {
     const sourceButtons = generateButton(sourceList, swap, 'source', active.source);
 
     return (
-        <Page title={`Learn ${_.capitalize(category)}`}>
+        <Page active={category} title={`Learn ${_.capitalize(category)} in Kannada`}>
             <div className="mb-5">
-                <div className="text-gray-700 text-sm mb-1">Take it up a notch, make it difficult with these</div>
                 <span className="relative mb-2 md:mb-0 z-0 inline-flex shadow-sm rounded-md mr-5">{sortButtons}</span>
                 <span className="relative z-0 inline-flex shadow-sm rounded-md">{sourceButtons}</span>
             </div>
