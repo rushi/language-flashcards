@@ -7,12 +7,12 @@ const wordLinks = (active) => {
         const count = _.keys(words[word]).length;
         const activeClass = word === active ? 'text-black underline' : 'text-gray-600';
         return (
-            <>
-            <Link key={word} href={`/${word}`}>
-                <a className={`hover:underline ${activeClass}`}>{_.capitalize(word)}</a>
-            </Link>
-            <span className="pl-1 mr-3 text-gray-400 text-xs">({count})</span>
-            </>
+            <span key={word} className="inline-flex mb-2">
+                <Link href={`/${word}`}>
+                    <a className={`hover:underline ${activeClass}`}>{_.capitalize(word)}</a>
+                </Link>
+                <span className="pl-1 mr-3 text-gray-400 text-xs leading-6">({count})</span>
+            </span>
         );
     });
 };
