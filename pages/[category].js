@@ -18,7 +18,9 @@ const doSort = (direction, list) => {
 
 const generateButton = (sortList, callback, name, active) => {
     return sortList.map((btn, idx) => {
-        const rounded = idx === 0 ? 'left' : idx === sortList.length - 1 ? 'right' : null;
+        let rounded = idx === 0 ? 'left' : idx === sortList.length - 1 ? 'right' : null;
+        rounded = sortList.length === 1 ? 'all' : rounded;
+        console.log(name, sortList[idx], rounded);
         const rest = { [`data-${name}`]: btn.key };
         return (
             <GroupButton
@@ -37,6 +39,7 @@ const Category = ({ category }) => {
     const [list, setList] = useState(words[category]); // TODO: This is a state because I can't derive it from source due to the json format
     const [order, setOrder] = useState('alphabetic');
     const [source, setSource] = useState('english');
+    const [showAnswers, setShowAnswers] = useState(false);
 
     useEffect(() => {
         setList(words[category]);
@@ -57,6 +60,8 @@ const Category = ({ category }) => {
         }
     };
 
+    const showAll = (e) => setShowAnswers(!showAnswers);
+
     // TODO: These can be a separate component
     const sortList = [
         { title: 'A-Z', key: 'alphabetic' },
@@ -69,14 +74,16 @@ const Category = ({ category }) => {
     ];
     const sortButtons = generateButton(sortList, sort, 'sort', active.order);
     const sourceButtons = generateButton(sourceList, swap, 'source', active.source);
+    const answerButton = generateButton([{title: 'Show Answers', key: ''}], showAll, 'something-rude', false)
 
     return (
         <Page active={category} title={`Learn ${_.capitalize(category)} in Kannada`}>
             <div className="mb-5">
                 <span className="relative mb-2 md:mb-0 z-0 inline-flex shadow-sm rounded-md mr-5">{sortButtons}</span>
-                <span className="relative z-0 inline-flex shadow-sm rounded-md">{sourceButtons}</span>
+                <span className="relative z-0 inline-flex shadow-sm rounded-md mr-5">{sourceButtons}</span>
+                <span className="relative z-0 inline-flex shadow-sm rounded-md">{answerButton}</span>
             </div>
-            <Grid order="alphabetic" source="english" words={list} />
+            <Grid order="alphabetic" source="english" words={list} showAnswers={showAnswers} />
         </Page>
     );
 };

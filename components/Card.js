@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 
 const Card = (props) => {
-    const [visible, setVisible] = useState(false);
+    const [visible, setVisible] = useState(props.showAnswers);
     const [animate, setAnimate] = useState(false);
-    const visibility = visible ? 'animate__slideInUp' : animate ? 'animate__slideOutDown' : 'invisible';
+    const animateClass = animate ? 'animate__slideOutDown' : 'invisible';
+    const visibilityClass = visible || props.showAnswers ? 'animate__slideInUp' : animateClass;
     const show = (e) => {
         setAnimate(true);
         setVisible(!visible);
@@ -17,7 +18,7 @@ const Card = (props) => {
                         <p className="source text-gray-900 text-sm">{props.source}</p>
                     </div>
                     <p
-                        className={`animate__animated animate__faster ${visibility} whitespace-normal mt-1
+                        className={`animate__animated animate__faster ${visibilityClass} whitespace-normal mt-1
                         text-gray-800 text-md px-3 py-1.5 truncate`}
                     >
                         {props.destination}
