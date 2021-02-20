@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import _mp from '../helpers/analyticsHelper';
 
 const Card = (props) => {
     const [visible, setVisible] = useState(props.showAnswers);
@@ -8,6 +9,7 @@ const Card = (props) => {
     const show = (e) => {
         setAnimate(true);
         setVisible(!visible);
+        _mp.track('Card click', { props, visible });
     }
 
     return (

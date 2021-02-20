@@ -20,7 +20,6 @@ const generateButton = (sortList, callback, name, active) => {
     return sortList.map((btn, idx) => {
         let rounded = idx === 0 ? 'left' : idx === sortList.length - 1 ? 'right' : null;
         rounded = sortList.length === 1 ? 'all' : rounded;
-        console.log(name, sortList[idx], rounded);
         const rest = { [`data-${name}`]: btn.key };
         return (
             <GroupButton
