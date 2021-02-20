@@ -9,7 +9,7 @@ const Card = (props) => {
     const show = (e) => {
         setAnimate(true);
         setVisible(!visible);
-        _mp.track('Card click', { props, visible });
+        _mp.track('Card click', { source: props.source, destination: props.destination, visible });
     }
 
     return (
