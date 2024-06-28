@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import Menu from '../components/Menu';
-import { ray } from 'node-ray/web';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
