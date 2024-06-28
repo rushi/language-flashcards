@@ -2,7 +2,6 @@ import _ from 'lodash';
 import words from '../words';
 import Grid from '../components/Grid';
 import Page from '../components/Page';
-import { ray } from 'node-ray/web';
 import { useState, useEffect } from 'react';
 import GroupButton from '../components/GroupButton';
 
@@ -73,7 +72,7 @@ const Category = ({ category }) => {
     ];
     const sortButtons = generateButton(sortList, sort, 'sort', active.order);
     const sourceButtons = generateButton(sourceList, swap, 'source', active.source);
-    const answerButton = generateButton([{title: 'Show Answers', key: ''}], showAll, 'something-rude', false)
+    const answerButton = generateButton([{ title: 'Show Answers', key: '' }], showAll, 'something-rude', false);
 
     return (
         <Page active={category} title={`Learn ${_.capitalize(category)} in Kannada`}>
