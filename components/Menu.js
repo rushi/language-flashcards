@@ -11,10 +11,8 @@ const wordLinks = (active) => {
 
         return (
             <span key={word} className="inline-flex mb-2">
-                <Link href={`/${word}`}>
-                    <a onClick={onClick} className={`hover:underline ${activeClass}`}>
-                        {_.capitalize(word)}
-                    </a>
+                <Link href={`/${word}`} onClick={onClick} className={`hover:underline ${activeClass}`}>
+                    {_.capitalize(word)}
                 </Link>
                 <span className="pl-1 mr-3 text-gray-400 text-xs leading-6">({count})</span>
             </span>
